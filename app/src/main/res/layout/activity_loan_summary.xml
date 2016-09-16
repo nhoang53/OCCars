@@ -44,7 +44,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/loanReportTextView"
-        android:layout_centerVertical="true" />
+        android:layout_below="@+id/monthlyPaymentTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"

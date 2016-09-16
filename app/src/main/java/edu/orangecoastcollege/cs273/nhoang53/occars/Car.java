@@ -49,20 +49,20 @@ public class Car {
 
     public double calculateInterestAmount(){
         if(mLoanTerm == 3)
-            return threeYearsInterest;
+            return calculateBorrowedAmount() * threeYearsInterest;
         else if(mLoanTerm == 4)
-            return fourYearsInterest;
+            return calculateBorrowedAmount() * fourYearsInterest;
         else
-            return fiveYearsInterest;
+            return calculateBorrowedAmount() * fiveYearsInterest;
     }
 
     public double calculateMonthlyPayment(){
         if(mLoanTerm == 3)
-            return calculateBorrowedAmount() * threeYearsInterest / 36;
+            return (calculateBorrowedAmount() + calculateInterestAmount()) / 36;
         else if(mLoanTerm == 4)
-            return calculateBorrowedAmount() * fourYearsInterest / 48;
+            return (calculateBorrowedAmount() + calculateInterestAmount()) / 48;
         else
-            return calculateBorrowedAmount() * fiveYearsInterest / 60;
+            return (calculateBorrowedAmount() + calculateInterestAmount()) / 60;
     }
     public double calculateTaxAmount(){
         return mPrice * TAX_RATE;
