@@ -1,5 +1,10 @@
 package edu.orangecoastcollege.cs273.nhoang53.occars;
 
+/**
+ * Nguyen Hoang C02288487
+ * Exercise: OC Cars
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

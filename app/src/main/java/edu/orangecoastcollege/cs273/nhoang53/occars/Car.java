@@ -1,21 +1,22 @@
 package edu.orangecoastcollege.cs273.nhoang53.occars;
 
 /**
- * Created by nhoang53 on 9/15/2016.
+ * Nguyen Hoang C02288487
+ * Exercise: OC Cars
  */
 
 public class Car {
+    private static final Double APR_3_YEARS = 0.0462;
+    private static final Double APR_4_YEARS = 0.0416;
+    private static final Double APR_5_YEARS = 0.0419;
     double mDownPayment;
-    double mLoanTerm;
+    int mLoanTerm;
     double mPrice;
     private static final Double TAX_RATE = 0.08;
-    private static final Double threeYearsInterest = 0.0462;
-    private static final Double fourYearsInterest = 0.0416;
-    private static final Double fiveYearsInterest = 0.0419;
 
     public Car() {
         mDownPayment = 0.0;
-        mLoanTerm = 0.0;
+        mLoanTerm = 0;
         mPrice = 0.0;
     }
 
@@ -23,7 +24,7 @@ public class Car {
         return mDownPayment;
     }
 
-    public double getmLoanTerm() {
+    public int getmLoanTerm() {
         return mLoanTerm;
     }
 
@@ -35,7 +36,7 @@ public class Car {
         this.mDownPayment = mDownPayment;
     }
 
-    public void setmLoanTerm(double mLoanTerm) {
+    public void setmLoanTerm(int mLoanTerm) {
         this.mLoanTerm = mLoanTerm;
     }
 
@@ -49,11 +50,11 @@ public class Car {
 
     public double calculateInterestAmount(){
         if(mLoanTerm == 3)
-            return calculateBorrowedAmount() * threeYearsInterest;
+            return calculateBorrowedAmount() * APR_3_YEARS;
         else if(mLoanTerm == 4)
-            return calculateBorrowedAmount() * fourYearsInterest;
+            return calculateBorrowedAmount() * APR_4_YEARS;
         else
-            return calculateBorrowedAmount() * fiveYearsInterest;
+            return calculateBorrowedAmount() * APR_5_YEARS;
     }
 
     public double calculateMonthlyPayment(){

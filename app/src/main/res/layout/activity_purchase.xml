@@ -65,7 +65,8 @@
         android:layout_alignLeft="@+id/downPaymentEditText"
         android:layout_alignStart="@+id/downPaymentEditText"
         android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2" />
+        android:layout_alignEnd="@+id/textView2"
+        android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +87,8 @@
         android:layout_toRightOf="@+id/loanTermRadioGroup"
         android:layout_marginTop="10dp"
         android:layout_alignRight="@+id/imageButton"
-        android:layout_alignEnd="@+id/imageButton" />
+        android:layout_alignEnd="@+id/imageButton"
+        android:inputType="number" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -105,7 +107,7 @@
             android:text="@string/years3"
             android:id="@+id/threeYearsRadioButton"
             android:layout_gravity="center_horizontal"
-            android:checked="false"
+            android:checked="true"
             android:textColor="#ffffff" />
 
         <RadioButton

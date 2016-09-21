@@ -1,11 +1,19 @@
 package edu.orangecoastcollege.cs273.nhoang53.occars;
 
+/**
+ * Nguyen Hoang C02288487
+ * Exercise: OC Cars
+ */
+
 import android.content.Intent;
+import android.icu.text.DecimalFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+
+import java.text.NumberFormat;
 
 public class PurchaseActivity extends AppCompatActivity {
 
@@ -20,6 +28,7 @@ public class PurchaseActivity extends AppCompatActivity {
     private String monthlyPaymentText;
     private String loanSummaryText;
 
+    private static NumberFormat currency = NumberFormat.getCurrencyInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,17 +83,16 @@ public class PurchaseActivity extends AppCompatActivity {
 
     private void constructLoanSummaryText()
     {
-        monthlyPaymentText = getString(R.string.report_line1) + currentCar.calculateMonthlyPayment();
-        loanSummaryText = getString(R.string.report_line2) + currentCar.getmPrice()
-                + getString(R.string.report_line3) + currentCar.getmDownPayment()
-                + getString(R.string.report_line5) + currentCar.calculateTaxAmount()
-                + getString(R.string.report_line6) + currentCar.calculateTotalCost()
-                + getString(R.string.report_line7) + currentCar.calculateBorrowedAmount()
-                + getString(R.string.report_line8) + currentCar.calculateInterestAmount()
-                + getString(R.string.report_line4) + currentCar.getmLoanTerm()
+        monthlyPaymentText = getString(R.string.report_line1) + currency.format(currentCar.calculateMonthlyPayment());
+        loanSummaryText = getString(R.string.report_line2) + currency.format(currentCar.getmPrice())
+                + getString(R.string.report_line3) + currency.format(currentCar.getmDownPayment())
+                + getString(R.string.report_line5) + currency.format(currentCar.calculateTaxAmount())
+                + getString(R.string.report_line6) + currency.format(currentCar.calculateTotalCost())
+                + getString(R.string.report_line7) + currency.format(currentCar.calculateBorrowedAmount())
+                + getString(R.string.report_line8) + currency.format(currentCar.calculateInterestAmount())
+                + getString(R.string.report_line4) + currentCar.getmLoanTerm() + " years."
                 + getString(R.string.report_line9)
                 + getString(R.string.report_line10)
-                + getString(R.string.report_line11)
-                + getString(R.string.report_line12);
+                + getString(R.string.report_line11);
     }
 }
